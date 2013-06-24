@@ -13,7 +13,6 @@ gem 'mysql2'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
@@ -21,6 +20,21 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :test do
+  # Pretty printed test output
+  gem 'turn', :require => false
+end
+
+group :test, :development do
+  gem 'rspec-rails', '~> 2.5'
+end
+
+group :test do
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
